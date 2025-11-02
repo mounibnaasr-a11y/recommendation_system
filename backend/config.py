@@ -8,8 +8,9 @@ from pydantic_settings import BaseSettings
 
 
 # Get the project root directory
-PROJECT_ROOT = Path(__file__).parent.parent
-MODELS_DIR = PROJECT_ROOT / "backend"
+# When running on Render, backend is the root, so we use current directory
+PROJECT_ROOT = Path(__file__).parent
+MODELS_DIR = PROJECT_ROOT / "models"
 DATA_DIR = PROJECT_ROOT / "data"
 
 # Ensure directories exist

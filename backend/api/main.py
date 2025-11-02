@@ -8,10 +8,15 @@ from pydantic import BaseModel
 from typing import List, Dict, Optional
 import uvicorn
 import pandas as pd
+import sys
+from pathlib import Path
 
-from backend.config import settings
-from backend.services.recommender import RecommenderService
-from backend.services.user_service import UserService
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from config import settings
+from services.recommender import RecommenderService
+from services.user_service import UserService
 
 
 # Pydantic models for API

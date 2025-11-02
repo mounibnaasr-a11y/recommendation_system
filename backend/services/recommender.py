@@ -7,8 +7,14 @@ import os
 import pickle
 from typing import List, Dict, Optional
 import pandas as pd
-from backend.models.hybrid_mf import HybridMatrixFactorization, MovieRecommender
-from backend.config import settings
+import sys
+from pathlib import Path
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from models.hybrid_mf import HybridMatrixFactorization, MovieRecommender
+from config import settings
 from .semantic_search import SemanticSearchService
 
 
